@@ -6,41 +6,46 @@ public class Afd {
 
     String[] e ;
     public void  validar (String entrada[]){
-        String[]estados= {"q0", "q1", "q2","q3","q4"};
+
 
         String[]estado0= {"q0", "q4", "q3","q3","q4"};
+
         String[]estado1= {"q1", "q2", "q1","q3","q4"};
 
 
         for (int i = 0 ; i < entrada.length ; i++) {
-            q="q0";
-          if (entrada[i]=="0"){
-              for (int m = 0 ; m < estado1.length ; m++) {
+            String temp;
+            if (q==null){
+                q="q0";
+            }else
 
-                  boolean tm=new String(q).equals(estado1[m]);
+            {
+
+          if (entrada[i]=="0"){
+
+
+                  boolean tm=new String(q).equals(estado0[0]);
 
                   if (tm==true){
-                      String pt=estado1[m];
+                      String pt=estado1[0];
                       System.out.print(pt);
-                      q=pt+q;
+                      q=pt;
                   }
 
-              }
-
             }
-            else if  (entrada[i]=="0"){
-              for (int n = 0 ; n < estado0.length ; n++) {
+             if  (entrada[i]=="1"){
+              for (int n = 0 ; n < estado1.length ; n++) {
 
-                  boolean tm=new String(q).equals(estado0[n]);
+                  boolean tm=new String(q).equals(estado1[0]);
 
                   if (tm==true){
-                      String postemp=estado0[n];
-                      System.out.print(q);
+                      String postemp=estado1[0];
+                      System.out.print(postemp);
                       q=postemp;
                   }
         }
             }
-
+            }
 
     }
     /*public void  validar2 (String tabla[][],String entrada[]){
